@@ -45,6 +45,8 @@ spec:
             httpGet:
               path: /actuator/health
               port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
