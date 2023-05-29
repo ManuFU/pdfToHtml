@@ -1,0 +1,81 @@
+# Default values for pdftohtmlkotlin.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# The number of replicas of your application that Kubernetes should maintain.
+replicaCount: 1
+
+# The Docker image properties.
+image:
+  # The Docker image repository.
+  repository: emanuele447/pdftohtmlkotlin
+  # The policy for pulling the image. "IfNotPresent" means it will only pull if the image doesn't exist in the local Docker registry.
+  pullPolicy: IfNotPresent
+  # The tag of the Docker image.
+  tag: "v1"
+
+# If you need to pull images from a private Docker registry, you can specify the required secret here.
+imagePullSecrets: []
+
+# Override the chart's default name and full name (which includes the release name).
+nameOverride: ""
+fullnameOverride: ""
+
+# Settings related to the service account that will be used to run the pods.
+serviceAccount:
+  # Whether to create a new service account.
+  create: true
+  # Annotations to add to the service account.
+  annotations: {}
+  # Name of the service account to use. If empty and create is true, a name is generated.
+  name: ""
+
+# Annotations to add to the pods.
+podAnnotations: {}
+
+# Security settings for the pods.
+podSecurityContext: {}
+securityContext: {}
+
+# The service to expose your application inside the Kubernetes cluster.
+service:
+  # The type of service. "ClusterIP" means it's only accessible inside the Kubernetes cluster.
+  type: ClusterIP
+  # The port to expose the service on.
+  port: 80
+
+# Ingress settings for your application.
+ingress:
+  # Whether to enable ingress.
+  enabled: false
+  className: ""
+  # Annotations for the ingress.
+  annotations: {}
+  # Hosts and paths that the ingress should apply to.
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  # TLS settings for the ingress.
+  tls: []
+
+# Resource requests and limits for the pods. Leaving it empty means there are no limits.
+resources: {}
+
+# Settings for horizontal pod autoscaler.
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+# Node selection constraints for the pods.
+nodeSelector: {}
+
+# Tolerations for the pods. This allows them to be scheduled on nodes with matching taints.
+tolerations: []
+
+# Affinity and anti-affinity rules for the pods.
+affinity: {}
