@@ -42,13 +42,13 @@ spec:
             httpGet:
               path: /actuator/health
               port: http
-            initialDelaySeconds: 7
+            initialDelaySeconds: 60
             periodSeconds: 5
           readinessProbe:
             httpGet:
               path: /actuator/health
               port: http
-            initialDelaySeconds: 7
+            initialDelaySeconds: 60
             periodSeconds: 5
 
           resources:
