@@ -42,7 +42,7 @@ service:
   # The type of service. "ClusterIP" means it's only accessible inside the Kubernetes cluster.
   type: ClusterIP
   # The port to expose the service on.
-  port: 80
+  port: 8080
 
 # Ingress settings for your application.
 ingress:
