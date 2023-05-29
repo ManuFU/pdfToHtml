@@ -8,6 +8,8 @@ plugins {
     kotlin("plugin.jpa") version "1.8.21"
 }
 
+
+
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
@@ -40,4 +42,8 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.jar {
+    manifest.attributes["Main-Class"] = "com.example.pdftohtmlKotlin.PdfToHtmlKotlinApplicationKt"
 }

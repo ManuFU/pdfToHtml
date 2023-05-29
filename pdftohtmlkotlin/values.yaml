@@ -12,7 +12,7 @@ image:
   # The policy for pulling the image. "IfNotPresent" means it will only pull if the image doesn't exist in the local Docker registry.
   pullPolicy: IfNotPresent
   # The tag of the Docker image.
-  tag: "v1"
+  tag: "v2"
 
 # If you need to pull images from a private Docker registry, you can specify the required secret here.
 imagePullSecrets: []
