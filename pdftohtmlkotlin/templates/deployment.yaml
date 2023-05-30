@@ -38,20 +38,20 @@ spec:
               containerPort: 8080
               hostPort: 8080
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 8080
-            initialDelaySeconds: 25
-            periodSeconds: 5
-            failureThreshold: 10
-          readinessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 8080
-            initialDelaySeconds: 25
-            periodSeconds: 5
-            failureThreshold: 10
+{{/*          livenessProbe:*/}}
+{{/*            httpGet:*/}}
+{{/*              path: /actuator/health*/}}
+{{/*              port: 8080*/}}
+{{/*            initialDelaySeconds: 25*/}}
+{{/*            periodSeconds: 5*/}}
+{{/*            failureThreshold: 10*/}}
+{{/*          readinessProbe:*/}}
+{{/*            httpGet:*/}}
+{{/*              path: /actuator/health*/}}
+{{/*              port: 8080*/}}
+{{/*            initialDelaySeconds: 25*/}}
+{{/*            periodSeconds: 5*/}}
+{{/*            failureThreshold: 10*/}}
 
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
