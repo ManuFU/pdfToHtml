@@ -5,6 +5,9 @@ metadata:
   labels:
     {{- include "pdftohtmlkotlin.labels" . | nindent 4 }}
 spec:
+  strategy:
+    type: Recreate
+
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
@@ -20,6 +23,7 @@ spec:
       labels:
         {{- include "pdftohtmlkotlin.selectorLabels" . | nindent 8 }}
     spec:
+
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
