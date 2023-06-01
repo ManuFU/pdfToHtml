@@ -40,7 +40,7 @@ securityContext: {}
 # The service to expose your application inside the Kubernetes cluster.
 service:
   # The type of service. "ClusterIP" means it's only accessible inside the Kubernetes cluster.
-  type: ClusterIP
+  type: NodePort
   # The port to expose the service on.
   port: 8080
 
