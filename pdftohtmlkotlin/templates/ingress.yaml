@@ -12,6 +12,6 @@ spec:
             path: "/"
             backend:
               service:
-                name: default
+                name: pdftohtmlkotlin-service
                 port:
                   number: 8080
